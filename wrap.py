@@ -78,10 +78,10 @@ pmpi_init_thread_bindings = ["PMPI_INIT_THREAD", "pmpi_init_thread", "pmpi_init_
 # to grab MPI_Wtick and MPI_Wtime, but we'll ignore the f2c and c2f calls
 # that return MPI_Datatypes and other such things.
 # MPI_Aint_add and MPI_Aint_diff return MPI_Aint, so include that too.
-rtypes = ['int', 'double', 'MPI_Aint' ]
+rtypes = ['int', 'double', 'MPI_Aint', 'MPIR_TYPE_INT' ]
 
 # If we find these strings in a declaration, exclude it from consideration.
-exclude_strings = [ "c2f", "f2c", "typedef", "MPI_T_", "MPI_Comm_spawn" ]
+exclude_strings = [ "c2f", "f2c", "typedef", "MPI_T_", "MPI_Comm_spawn", "MPI_NEC_" ]
 
 # Regular expressions for start and end of declarations in mpi.h. These are
 # used to get the declaration strings out for parsing with formal_re below.
